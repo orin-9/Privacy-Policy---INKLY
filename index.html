@@ -3,82 +3,265 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - INKLY Extension</title>
+    <title>Privacy Policy | INKLY Extension</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
     <style>
+        :root {
+            --primary-blue: #4285f4;
+            --premium-orange: #ff8c00;
+            --vibrant-green: #2ecc71;
+            --sunny-yellow: #f1c40f;
+            --glass-bg: rgba(255, 255, 255, 0.95);
+            --text-dark: #1e293b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
+            background: linear-gradient(135deg, #f6f9fc 0%, #eef2f7 100%);
+            color: var(--text-dark);
+            line-height: 1.7;
             padding: 40px 20px;
-            background-color: #f4f7f6;
+            overflow-x: hidden;
         }
+
+        /* Animated Background Shapes */
+        .bg-shape {
+            position: fixed;
+            z-index: -1;
+            filter: blur(80px);
+            border-radius: 50%;
+            opacity: 0.4;
+        }
+        .shape-1 { top: -100px; right: -100px; width: 400px; height: 400px; background: var(--premium-orange); }
+        .shape-2 { bottom: -100px; left: -100px; width: 400px; height: 400px; background: var(--primary-blue); }
+
         .container {
-            background: #fff;
-            padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--glass-bg);
+            border-radius: 24px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.05);
+            border: 1px solid rgba(255,255,255,0.8);
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+            animation: slideUp 0.8s ease-out;
         }
-        h1 {
-            color: #2c3e50;
-            border-bottom: 2px solid #4285f4;
-            padding-bottom: 10px;
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
-        h2 {
-            color: #2980b9;
-            margin-top: 25px;
-        }
-        p {
-            margin-bottom: 15px;
-        }
-        .footer {
-            margin-top: 40px;
+
+        /* Header Styling */
+        header {
+            background: linear-gradient(90deg, var(--premium-orange), var(--sunny-yellow));
+            padding: 60px 40px;
             text-align: center;
-            font-size: 0.9em;
-            color: #7f8c8d;
+            color: white;
+            position: relative;
         }
-        .highlight {
-            color: #4285f4;
-            font-weight: bold;
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .update-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            margin-top: 15px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /* Content Sections */
+        .content {
+            padding: 50px;
+        }
+
+        .section-card {
+            margin-bottom: 35px;
+            padding: 25px;
+            border-radius: 18px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .section-card:hover {
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border-color: #eee;
+            transform: translateX(5px);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        /* Color Coding for Icons */
+        .blue-icon { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); }
+        .green-icon { background: linear-gradient(135deg, #66bb6a 0%, #43a047 100%); }
+        .orange-icon { background: linear-gradient(135deg, #ffb347 0%, #ffcc33 100%); }
+        .yellow-icon { background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        ul li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--vibrant-green);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px;
+            background: #fcfcfc;
+            border-top: 1px solid #eee;
+            color: #94a3b8;
+        }
+
+        .footer b {
+            color: var(--primary-blue);
+        }
+
+        .contact-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .contact-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(66, 133, 244, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .content { padding: 25px; }
+            header h1 { font-size: 2rem; }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>Privacy Policy for <span class="highlight">INKLY</span></h1>
-    <p><strong>Last Updated:</strong> February 28, 2026</p>
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
 
-    <p>Welcome to <strong>INKLY</strong>. Your privacy is our top priority. This Privacy Policy outlines how our Chrome Extension handles data.</p>
+    <div class="container">
+        <header>
+            <p>PRIVACY FIRST POLICY</p>
+            <h1>INKLY <i class="fas fa-feather-alt"></i></h1>
+            <div class="update-badge">Last Updated: February 28, 2026</div>
+        </header>
 
-    <h2>1. Data Collection</h2>
-    <p>INKLY is designed to be a privacy-first tool. We <strong>do not collect</strong>, store, or transmit any personally identifiable information (PII). No email addresses, names, or browsing histories are ever sent to our servers.</p>
+        <div class="content">
+            <p style="text-align: center; font-size: 1.2rem; color: #64748b; margin-bottom: 40px;">
+                Your privacy is our top priority. We've built INKLY to be as transparent as it is powerful.
+            </p>
 
-    <h2>2. Use of Permissions</h2>
-    <p>To provide its core features, INKLY requires the following permissions:</p>
-    <ul>
-        <li><strong>contextMenus:</strong> To allow you to highlight text via the right-click menu.</li>
-        <li><strong>storage:</strong> To save your highlights locally on your browser so they persist after a refresh.</li>
-        <li><strong>activeTab:</strong> To apply the highlight colors to the page you are currently viewing.</li>
-    </ul>
+            <div class="section-card">
+                <div class="icon-box blue-icon"><i class="fas fa-shield-halved"></i></div>
+                <h2>Data Collection</h2>
+                <p>INKLY is designed to be a privacy-first tool. We <strong>do not collect</strong>, store, or transmit any personally identifiable information (PII). No email addresses, names, or browsing histories are ever sent to our servers.</p>
+            </div>
 
-    <h2>3. Data Storage</h2>
-    <p>All highlights created using INKLY are stored <strong>locally</strong> on your device using Chrome's secure storage API. We have no access to your saved data.</p>
+            <div class="section-card">
+                <div class="icon-box green-icon"><i class="fas fa-key"></i></div>
+                <h2>Use of Permissions</h2>
+                <p>To provide its core features, INKLY requires the following permissions:</p>
+                <ul>
+                    <li><strong>contextMenus:</strong> To allow you to highlight text via the right-click menu.</li>
+                    <li><strong>storage:</strong> To save your highlights locally on your browser.</li>
+                    <li><strong>activeTab:</strong> To apply the highlight colors to the page you are viewing.</li>
+                </ul>
+            </div>
 
-    <h2>4. Third-Party Sharing</h2>
-    <p>We do not sell, trade, or share any user data with third parties. Since no data is collected, there is no data to be shared.</p>
+            <div class="section-card">
+                <div class="icon-box orange-icon"><i class="fas fa-database"></i></div>
+                <h2>Data Storage</h2>
+                <p>All highlights created using INKLY are stored <strong>locally</strong> on your device using Chrome's secure storage API. We have no access to your saved data.</p>
+            </div>
 
-    <h2>5. Changes to This Policy</h2>
-    <p>We may update our Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date.</p>
+            <div class="section-card">
+                <div class="icon-box yellow-icon"><i class="fas fa-handshake-slash"></i></div>
+                <h2>Third-Party Sharing</h2>
+                <p>We do not sell, trade, or share any user data with third parties. Since no data is collected, there is absolutely nothing to be shared.</p>
+            </div>
 
-    <h2>6. Contact Us</h2>
-    <p>If you have any questions or feedback regarding this policy, please contact us through the Chrome Web Store support section.</p>
-</div>
+            <div style="text-align: center; margin-top: 40px;">
+                <i class="fas fa-envelope-open-text" style="font-size: 2rem; color: var(--primary-blue); margin-bottom: 15px;"></i>
+                <h3>Have Questions?</h3>
+                <p>We are here to help you with any queries regarding your privacy.</p>
+                <a href="#" class="contact-btn">Contact Support</a>
+            </div>
+        </div>
 
-<div class="footer">
-    &copy; 2026 INKLY Extension | Built with ❤️ for Users
-</div>
+        <div class="footer">
+            <p>&copy; 2026 <b>ETARNITY</b> Global Innovation | Built with <i class="fas fa-heart" style="color: #e74c3c;"></i> for Users</p>
+        </div>
+    </div>
 
+    <script>
+        // Subtle JS effect to add dynamic feel
+        document.querySelectorAll('.section-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                console.log('Premium UI interaction logged');
+            });
+        });
+    </script>
 </body>
 </html>
